@@ -7,7 +7,9 @@ var Dancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
 
-  this.step = function() {
+  this.step = function(isOld) {
+    console.log('oldStep', !!isOld);
+    console.log('calling step with this =', this);
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
     setTimeout(self.step.bind(self), timeBetweenSteps);
