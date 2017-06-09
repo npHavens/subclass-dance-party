@@ -16,13 +16,14 @@ describe('growingDancer', function() {
     var startPositionTop = growingDancer.top;
     var startPositionLeft = growingDancer.left;
     growingDancer.step();
+    growingDancer.step();
     var movedHorizontal = startPositionTop !== growingDancer.top;
     var movedVertical = startPositionLeft !== growingDancer.left;
     expect(movedHorizontal || movedVertical).to.equal(true);
   });
 
   it('should report the correct constructor', function() {
-    expect(growingDancer.constructor).to.equal(growingDancer);
+    expect(growingDancer.constructor).to.equal(GrowingDancer);
   });
 
   describe('dance', function() {
