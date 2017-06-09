@@ -19,8 +19,8 @@ describe('movingDancer', function() {
     var movedHorizontal = startPositionTop !== movingDancer.top;
     var movedVertical = startPositionLeft !== movingDancer.left;
     expect(movedHorizontal || movedVertical).to.equal(true);
-
   });
+
   it('should report the correct constructor', function() {
     expect(movingDancer.constructor).to.equal(MovingDancer);
   });

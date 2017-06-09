@@ -18,6 +18,10 @@ describe('blinkyDancer', function() {
     expect(blinkyDancer.$node.toggle.called).to.be.true;
   });
 
+  it('should report the correct constructor', function() {
+    expect(blinkyDancer.constructor).to.equal(BlinkyDancer);
+  });
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(blinkyDancer, 'step');
