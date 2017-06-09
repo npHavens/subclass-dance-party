@@ -15,10 +15,13 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
     // other effects you can use on a jQuery-wrapped html tag.
     this.$node.toggle();
   };
+
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
+
+
 
   // call the old version of step at the beginning of any call to this new version of step
   //console.log(oldStep);
