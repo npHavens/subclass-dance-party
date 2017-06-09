@@ -12,22 +12,20 @@ describe('movingDancer', function() {
     expect(movingDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(movingDancer.$node, 'toggle');
+  it('should have a step function that makes its node move', function() {
+    var startPositionTop = movingDancer.position.top;
+    var startPositionLeft = movingDancer.position.left;
     movingDancer.step();
-    expect(movingDancer.$node.toggle.called).to.be.true;
+    expect(movingDancer.position.top).to.not.equal(startPositionTop);
   });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(movingDancer, 'step');
-      //console.log(movingDancer.step.callCount)
       expect(movingDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
-      //console.log(movingDancer.step.callCount)
       expect(movingDancer.step.callCount).to.be.equal(1);
-
       clock.tick(timeBetweenSteps);
       expect(movingDancer.step.callCount).to.be.equal(2);
     });

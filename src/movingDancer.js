@@ -1,6 +1,8 @@
 var MovingDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass('moving-dancer');
 
+  this.position = {top: top, left: left};
   this.oldStep = this.step;
 
   this.step = function() {
@@ -8,10 +10,10 @@ var MovingDancer = function(top, left, timeBetweenSteps) {
     this.height = $(document).height();
     this.width = $(document).width();
 
-    this.position = this.getPosition();
     this.newPosition = {};
     this.newPosition.top = this.position.top + getRandomInt(-50, 50);
     this.newPosition.left = this.position.left + getRandomInt(-50, 50);
+
     if (this.newPosition.top > this.height || this.newPosition.top < 0) {
       this.newPosition.top = this.position.top;
     }
@@ -20,13 +22,13 @@ var MovingDancer = function(top, left, timeBetweenSteps) {
     }
 
     this.$node.animate(this.newPosition, timeBetweenSteps);
+    this.position = this.newPosition;
 
   };
 
   this.getPosition = function() {
     return this.$node.offset();
   };
-
 
 };
 
