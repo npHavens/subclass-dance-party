@@ -12,6 +12,8 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+  font-family: "Arial Black";
+  font-size: 13px;ß
 }
 .topbar{
   height:32px;
