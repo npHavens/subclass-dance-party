@@ -24,15 +24,21 @@ Dancer.prototype.setPosition = function() {
 
 Dancer.prototype.swapImage = function(urlString) {
   this.$node.find('img').remove();
-  this.$node.append('<img src=' + urlString + '/>');
+  this.$node.append('<img src=' + '"' + urlString + '"' + '/>');
 };
 
 Dancer.prototype.lineUp = function() {
   this.oldStep = this.step;
-  this.step = this.setPosition;
+  this.step = function() {};
   this.top = 400;
-  this.step();
   this.step = this.oldStep;
 };
 
+Dancer.prototype.changeOutfit = function() {
+  this.newOutfit = this.outfits[0];
+  this.swapImage(this.newOutfit);
+  this.outfits.shift();
+  this.outfits.push(this.newOutfit);
 
+  this.$node.find('img').css('width', this.imageSizeInt);
+};
