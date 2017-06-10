@@ -26,15 +26,22 @@ describe('growingDancer', function() {
     expect(growingDancer.constructor).to.equal(GrowingDancer);
   });
 
+  it('should increase element width on every step', function() {
+    var startingWidth = growingDancer.imageSizeInt;
+    growingDancer.step();
+    growingDancer.step();
+    expect(growingDancer.imageSizeInt + startingWidth).to.be.above(startingWidth);
+  });
+
   describe('dance', function() {
-    it('should call step at least once per second', function() {
+    it('should call step at least once per 700 ms', function() {
       sinon.spy(growingDancer, 'step');
       expect(growingDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
-      clock.tick(timeBetweenSteps);
+      clock.tick(growingDancer.timeBetweenSteps);
       expect(growingDancer.step.callCount).to.be.equal(1);
-      clock.tick(timeBetweenSteps);
+      clock.tick(growingDancer.timeBetweenSteps);
       expect(growingDancer.step.callCount).to.be.equal(2);
     });
   });
+
 });

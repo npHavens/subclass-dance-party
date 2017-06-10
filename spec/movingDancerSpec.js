@@ -16,6 +16,7 @@ describe('movingDancer', function() {
     var startPositionTop = movingDancer.top;
     var startPositionLeft = movingDancer.left;
     movingDancer.step();
+    movingDancer.step();
     var movedHorizontal = startPositionTop !== movingDancer.top;
     var movedVertical = startPositionLeft !== movingDancer.left;
     expect(movedHorizontal || movedVertical).to.equal(true);
