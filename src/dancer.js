@@ -25,7 +25,6 @@ Dancer.prototype.setPosition = function() {
 Dancer.prototype.swapImage = function(urlString) {
   this.$node.find('img').remove();
   this.$node.append('<img src=' + urlString + '/>');
-  console.log(this.$node.find('img'))
 };
 
 
