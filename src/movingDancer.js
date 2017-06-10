@@ -16,7 +16,7 @@ MovingDancer.prototype.step = function() {
   this.newPosition.top = this.top + getRandomInt(-50, 50);
   this.newPosition.left = this.left + getRandomInt(-50, 50);
 
-  if (this.newPosition.top >= this.height - 100 || this.newPosition.top <= 0) {
+  if (this.newPosition.top >= this.height - 100 || this.newPosition.top <= 200) {
     this.newPosition.top = this.top;
   }
   if (this.newPosition.left >= this.width - 100 || this.newPosition.left <= 0) {

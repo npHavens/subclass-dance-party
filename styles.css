@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#b78645;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -13,7 +13,7 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
   font-family: "Arial Black";
-  font-size: 13px;ß
+  font-size: 13px;
 }
 .topbar{
   height:32px;

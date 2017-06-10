@@ -30,6 +30,17 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    window.lineUpAll();
   });
+
+  window.lineUpAll = function() {
+    window.dancers.forEach(function(dancer) {
+      dancer.lineUp();
+    });
+  };
+  $('.lineUpButton').on('click', function(event) {
+    window.lineUpAll();
+  });
+
 });
 

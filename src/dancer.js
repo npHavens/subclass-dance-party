@@ -27,4 +27,12 @@ Dancer.prototype.swapImage = function(urlString) {
   this.$node.append('<img src=' + urlString + '/>');
 };
 
+Dancer.prototype.lineUp = function() {
+  this.oldStep = this.step;
+  this.step = this.setPosition;
+  this.top = 400;
+  this.step();
+  this.step = this.oldStep;
+};
+
 
