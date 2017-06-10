@@ -21,12 +21,21 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+ /* border:10px solid red;*/
   border-radius: 10px;
   position:absolute;
 }
 
 .blinky-dancer {
   border-color: blue;
+}
+
+.stage * {
+  display: block;
+  margin: auto;
+}
+
+.moving-dancer {
+ /* background-image: url("./img/kenny.png");*/
 }
 

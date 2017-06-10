@@ -1,6 +1,7 @@
 var MovingDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, timeBetweenSteps);
+  Dancer.call(this, top, left, 200);
   this.$node.addClass('moving-dancer');
+  this.$node.append('<img src="./img/kenny.png" height="75">');
 };
 
 MovingDancer.prototype = Object.create(BlinkyDancer.prototype);
@@ -15,10 +16,10 @@ MovingDancer.prototype.step = function() {
   this.newPosition.top = this.top + getRandomInt(-50, 50);
   this.newPosition.left = this.left + getRandomInt(-50, 50);
 
-  if (this.newPosition.top >= this.height || this.newPosition.top <= 0) {
+  if (this.newPosition.top >= this.height - 100 || this.newPosition.top <= 375) {
     this.newPosition.top = this.top;
   }
-  if (this.newPosition.left >= this.width || this.newPosition.left <= 0) {
+  if (this.newPosition.left >= this.width - 100 || this.newPosition.left <= 100) {
     this.newPosition.left = this.left;
   }
 
