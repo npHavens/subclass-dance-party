@@ -30,7 +30,8 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    window.lineUpAll();
+    dancer.top = 400;
+    dancer.setPosition();
   });
 
   window.lineUpAll = function() {

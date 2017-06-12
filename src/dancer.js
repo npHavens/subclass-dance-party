@@ -28,10 +28,19 @@ Dancer.prototype.swapImage = function(urlString) {
 };
 
 Dancer.prototype.lineUp = function() {
+  var dancer = this;
   this.oldStep = this.step;
-  this.step = function() {};
   this.top = 400;
-  this.step = this.oldStep;
+  this.setPosition();
+  this.step = function() {
+  };
+
+  setTimeout(function() {
+    dancer.step = dancer.oldStep;
+    dancer.step.call(dancer);
+
+  }, 2000);
+  //this.step = this.oldStep;
 };
 
 Dancer.prototype.changeOutfit = function() {
