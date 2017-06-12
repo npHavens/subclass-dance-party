@@ -30,8 +30,14 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
-    dancer.top = 400;
-    dancer.setPosition();
+    if (dancerMakerFunctionName !== 'CheesyPoofs') {
+      dancer.top = 400;
+      dancer.setPosition();
+    } else if (dancer.top < 300) {
+      dancer.top = dancer.top + 300;
+      dancer.setPosition();
+    }
+
   });
 
   window.lineUpAll = function() {

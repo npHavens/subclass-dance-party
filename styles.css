@@ -41,6 +41,11 @@ body, a:link, a:visited, a:active{
   height: 75px;
 }
 
-.growing-dancer. .Kenny {
+.growing-dancer {
   cursor: pointer;
+}
+
+.CheesyPoofs > img{
+  height: 40px;
+  width: 35px;
 }
