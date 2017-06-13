@@ -17,7 +17,7 @@ GrowingDancer.prototype.step = function() {
 
   if (window.food.length) {
     this.getNearestCheesyPoofs();
-    if (this.closestCheesyPoofs.distance < 100) {
+    if (this.closestCheesyPoofs.distance < 150) {
       this.eat();
       this.grow();
       this.timeBetweenSteps += 50;
@@ -29,8 +29,12 @@ GrowingDancer.prototype.grow = function() {
   var imageSize = /\d+/.exec(this.$node.find('img').css('width'));
   imageSize = imageSize || [75];
   this.imageSizeInt = +imageSize[0];
-  if (this.imageSizeInt < 200 ) {
+  if (this.imageSizeInt < 300 ) {
     this.$node.find('img').css('width', this.imageSizeInt + 10);
+  }
+  if (this.imageSizeInt > 150) {
+    this.swapImage('./img/Cartman-keep.png')
+    this.$node.find('img').css('width', this.imageSizeInt);
   }
 };
 

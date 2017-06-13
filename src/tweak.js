@@ -12,8 +12,8 @@ Tweak.prototype.step = function() {
 
   if (window.coffee.length) {
     this.getNearestCoffee();
-    //console.log(this.closestCoffee.distance)
-    if (this.closestCoffee.distance < 100) {
+
+    if (this.closestCoffee.distance < 150) {
       this.drink();
       this.timeBetweenSteps -= 50;
     }
