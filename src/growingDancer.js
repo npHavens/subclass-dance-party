@@ -27,9 +27,37 @@ GrowingDancer.prototype.grow = function() {
 };
 
 GrowingDancer.prototype.getNearestCheesyPoofs = function() {
-  var $CheesyPoofs = $('.CheesyPoofs');
+  //var currentLocation = {top: this.top, left: this.left};
+  var Cartman = this;
 
-  $CheesyPoofs.each(function(i, element) {
-    console.log(element.css('top'));
-  });
+  if (window.food.length > 1) {
+    window.food.filter(function(item) {
+      item.distance = Math.sqrt(Math.abs(Cartman.top - item.top)**2 + Math.abs(Cartman.top - item.top)**2);
+      return item.constructor === CheesyPoofs;
+
+     }).sort(function(a, b) {
+      return b.distance - a.distance;
+    });
+    //console.log(window.food.length)
+    //.log(window.food[0])
+
+    window.food.forEach((item, i) => item.$node.append('<span>---' + i +'---<span>'));
+console.log(window.food.length, window.food[0].distance, window.food[window.food.length - 1].distance)
+   window.food[0].$node.find('img').animate({opacity: 0}, 5000);
+   console.log(window.food.length, window.food[0].distance)
+    window.food.shift();
+     console.log(window.food.length);
+
+
+    //console.log(window.food[0].distance, window.food[window.food.length - 1].distance)
+  } else if (window.food.length === 1) {
+   window.food[0].$node.find('img').animate({opacity: 0}, 1);
+
+    window.food.shift();
+    // console.log(window.food.length);
+
+  }
+  // $CheesyPoofs.each(function(i, element) {
+  //   console.log(element.css('top'));
+  // });
 };

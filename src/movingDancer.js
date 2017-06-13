@@ -23,9 +23,10 @@ MovingDancer.prototype.step = function() {
     this.newPosition.left = this.left;
   }
 
-  this.$node.animate(this.newPosition, this.timeBetweenSteps);
-  this.top = this.newPosition.top;
-  this.left = this.newPosition.left;
+  this.$node.animate(this.newPosition);
+  //this.setPosition();
+   this.top = this.newPosition.top;
+   this.left = this.newPosition.left;
 };
 
 var getRandomInt = function(min, max) {

@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.food = [];
 
   $('.addDancerButton').on('click', function(event) {
 
@@ -28,15 +29,13 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
-    window.dancers.push(dancer);
-    $('body').append(dancer.$node);
+
     if (dancerMakerFunctionName !== 'CheesyPoofs') {
-      dancer.top = 400;
-      dancer.setPosition();
-    } else if (dancer.top < 300) {
-      dancer.top = dancer.top + 300;
-      dancer.setPosition();
+      window.dancers.push(dancer);
+    } else {
+      window.food.push(dancer);
     }
+    $('body').append(dancer.$node);
 
   });
 
@@ -44,6 +43,7 @@ $(document).ready(function() {
     window.dancers.forEach(function(dancer) {
       dancer.lineUp();
     });
+
   };
   $('.lineUpButton').on('click', function(event) {
     window.lineUpAll();

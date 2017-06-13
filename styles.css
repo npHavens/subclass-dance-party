@@ -49,3 +49,15 @@ body, a:link, a:visited, a:active{
   height: 40px;
   width: 35px;
 }
+
+.moving-dancer > img {
+  width: 75px;
+}
+
+.Butters > img, .Kenny > img, .Stan > img, .Shelly > img, .Wendy > img {
+  width: 50px;
+}
+
+.Tweak > img {
+  width: 60px;
+}

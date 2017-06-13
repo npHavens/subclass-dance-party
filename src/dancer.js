@@ -2,11 +2,13 @@
 var Dancer = function(top, left, timeBetweenSteps) {
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
-  this.top = top;
+  this.top = top < 300 ? top + 300 : top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
 
-  this.step();
+  if (this.contructor !== CheesyPoofs) {
+    this.step();
+  }
   this.setPosition();
 };
 
@@ -19,7 +21,7 @@ Dancer.prototype.setPosition = function() {
     top: this.top,
     left: this.left
   };
-  this.$node.css(styleSettings);
+  this.$node.animate(styleSettings, this.timeBetweenSteps);
 };
 
 Dancer.prototype.swapImage = function(urlString) {
@@ -39,7 +41,7 @@ Dancer.prototype.lineUp = function() {
     dancer.step = dancer.oldStep;
     dancer.step.call(dancer);
 
-  }, 2000);
+  }, 1000);
   //this.step = this.oldStep;
 };
 

@@ -5,5 +5,5 @@ var Kyle = function(top, left, timeBetweenSteps) {
   this.$node.append('<img src="./img/Kyle.png">');
 };
 
-Kyle.prototype = Object.create(Dancer.prototype);
+Kyle.prototype = Object.create(MovingDancer.prototype);
 Kyle.prototype.constructor = Kyle;
