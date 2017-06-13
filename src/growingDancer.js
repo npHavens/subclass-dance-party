@@ -14,7 +14,7 @@ GrowingDancer.prototype.constructor = GrowingDancer;
 
 GrowingDancer.prototype.step = function() {
   MovingDancer.prototype.step.call(this);
-  //console.log('x', this.x, 'y', this.y)
+
   if (window.food.length) {
     this.getNearestCheesyPoofs();
     if (this.closestCheesyPoofs.distance < 100) {
@@ -47,8 +47,3 @@ GrowingDancer.prototype.getNearestCheesyPoofs = function() {
   this.closestCheesyPoofs = this.sortedByDistance[0];
 };
 
-GrowingDancer.prototype.eat = function() {
-  this.closestCheesyPoofs.$node.remove();
-  this.sortedByDistance.shift();
-  window.food = this.sortedByDistance;
-};

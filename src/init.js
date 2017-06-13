@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
   window.food = [];
+  window.coffee = [];
 
   $('.addDancerButton').on('click', function(event) {
 
@@ -30,10 +31,12 @@ $(document).ready(function() {
       Math.random() * 1000
     );
 
-    if (dancerMakerFunctionName !== 'CheesyPoofs') {
-      window.dancers.push(dancer);
-    } else {
+    if (dancerMakerFunctionName === 'CheesyPoofs') {
       window.food.push(dancer);
+    } else if (dancerMakerFunctionName === 'Coffee') {
+      window.coffee.push(dancer);
+    } else {
+      window.dancers.push(dancer);
     }
     $('body').append(dancer.$node);
 

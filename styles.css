@@ -46,8 +46,8 @@ body, a:link, a:visited, a:active{
 }
 
 .CheesyPoofs > img{
-  height: 40px;
-  width: 35px;
+  height: 45px;
+  width: 40px;
 }
 
 .moving-dancer > img {
@@ -60,4 +60,9 @@ body, a:link, a:visited, a:active{
 
 .Tweak > img {
   width: 60px;
+}
+
+.coffee > img {
+  height: 30px;
+  width: 30px;
 }

@@ -23,7 +23,7 @@ MovingDancer.prototype.step = function() {
     this.newPosition.left = this.left;
   }
 
-  this.$node.animate(this.newPosition);
+  this.$node.animate(this.newPosition, this.timeBetweenSteps);
   this.top = this.newPosition.top;
   this.left = this.newPosition.left;
   this.x = this.left;

@@ -61,3 +61,9 @@ Dancer.prototype.eat = function() {
   this.sortedByDistance.shift();
   window.food = this.sortedByDistance;
 };
+
+Dancer.prototype.drink = function() {
+  this.closestCoffee.$node.remove();
+  this.sortedByDistance.shift();
+  window.coffee = this.sortedByDistance;
+};
