@@ -5,6 +5,8 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.top = top < 300 ? top + 300 : top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
+  this.x = this.left;
+  this.y = $(document).height() - this.top;
 
   if (this.contructor !== CheesyPoofs) {
     this.step();
@@ -52,4 +54,10 @@ Dancer.prototype.changeOutfit = function() {
   this.outfits.push(this.newOutfit);
 
   this.$node.find('img').css('width', this.imageSizeInt);
+};
+
+Dancer.prototype.eat = function() {
+  this.closestCheesyPoofs.$node.remove();
+  this.sortedByDistance.shift();
+  window.food = this.sortedByDistance;
 };
