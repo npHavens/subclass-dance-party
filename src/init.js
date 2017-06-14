@@ -24,22 +24,29 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
-    var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 1000
-    );
-
-    if (dancerMakerFunctionName === 'CheesyPoofs') {
-      window.food.push(dancer);
-    } else if (dancerMakerFunctionName === 'Coffee') {
-      window.coffee.push(dancer);
-    } else {
+    if (dancerMakerFunctionName !== 'CheesyPoofs' && dancerMakerFunctionName !== 'Coffee') {
+      var dancer = new dancerMakerFunction(
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random(),
+        Math.random() * 1000
+      );
       window.dancers.push(dancer);
+      $('body').append(dancer.$node);
+    } else {
+      for (var i = 0; i < 10; i++) {
+        var food = new dancerMakerFunction(
+          $('body').height() * Math.random(),
+          $('body').width() * Math.random(),
+          Math.random() * 1000
+          );
+        $('body').append(food.$node);
+        if (dancerMakerFunctionName === 'CheesyPoofs') {
+        window.food.push(food);
+      } else if (dancerMakerFunctionName === 'Coffee') {
+        window.coffee.push(food);
+      }
+      }
     }
-    $('body').append(dancer.$node);
-
   });
 
   window.lineUpAll = function() {
