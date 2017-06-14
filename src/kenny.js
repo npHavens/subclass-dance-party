@@ -1,5 +1,5 @@
 var Kenny = function(top, left, timeBetweenSteps) {
-  MovingDancer.call(this, top, left, 300);
+  MovingDancer.call(this, top, left, 400);
   this.$node.addClass('Kenny');
   this.$node.find('img').remove();
   this.$node.append('<img src="./img/kenny.png">');

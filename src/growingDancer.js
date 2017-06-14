@@ -31,11 +31,12 @@ GrowingDancer.prototype.grow = function() {
   this.imageSizeInt = +imageSize[0];
   if (this.imageSizeInt < 300 ) {
     this.$node.find('img').css('width', this.imageSizeInt + 10);
+    if (this.imageSizeInt >= 205) {
+      this.swapImage('./img/Cartman-keep.png')
+      this.$node.find('img').css('width', this.imageSizeInt);
+    }
   }
-  if (this.imageSizeInt > 150) {
-    this.swapImage('./img/Cartman-keep.png')
-    this.$node.find('img').css('width', this.imageSizeInt);
-  }
+
 };
 
 GrowingDancer.prototype.getNearestCheesyPoofs = function() {
