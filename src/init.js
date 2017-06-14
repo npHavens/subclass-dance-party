@@ -41,10 +41,10 @@ $(document).ready(function() {
           );
         $('body').append(food.$node);
         if (dancerMakerFunctionName === 'CheesyPoofs') {
-        window.food.push(food);
-      } else if (dancerMakerFunctionName === 'Coffee') {
-        window.coffee.push(food);
-      }
+          window.food.push(food);
+        } else if (dancerMakerFunctionName === 'Coffee') {
+          window.coffee.push(food);
+        }
       }
     }
   });

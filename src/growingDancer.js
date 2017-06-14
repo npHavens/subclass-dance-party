@@ -31,9 +31,10 @@ GrowingDancer.prototype.grow = function() {
   this.imageSizeInt = +imageSize[0];
   if (this.imageSizeInt < 300 ) {
     this.$node.find('img').css('width', this.imageSizeInt + 10);
-    if (this.imageSizeInt >= 205) {
+    if (this.imageSizeInt >= 160) {
       this.swapImage('./img/Cartman-keep.png')
       this.$node.find('img').css('width', this.imageSizeInt);
+      this.$node.find('img').css('width', this.imageSizeInt + 10);
     }
   }
 
